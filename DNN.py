@@ -11,7 +11,10 @@ x_test = x_test.astype('float32') / 255.0
 # 建立神經網路模型
 model = keras.Sequential([
     keras.layers.Flatten(input_shape=(28, 28)),
+    keras.layers.Dense(256, activation='relu'),
+    keras.layers.Dropout(0.3),
     keras.layers.Dense(128, activation='relu'),
+    keras.layers.Dropout(0.2),
     keras.layers.Dense(64, activation='relu'),
     keras.layers.Dense(10, activation='softmax')
 ])
